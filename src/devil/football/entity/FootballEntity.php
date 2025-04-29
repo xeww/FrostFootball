@@ -164,7 +164,6 @@ class FootballEntity extends Human {
         $location = $player->getLocation();
         $vector3 = $location->asVector3();
         $this->location->yaw = $location->yaw;
-        $player->getWorld()->broadcastPacketToViewers($vector3, LevelSoundEventPacket::create(LevelSoundEvent::ITEM_SHIELD_BLOCK, $vector3, 0, ":", false, true));
         $this->kick(match (true) {
             $player->isSneaking() => 0.5,
             $player->isSprinting() => 1.5,
